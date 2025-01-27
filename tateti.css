@@ -1,0 +1,87 @@
+:root{
+  --bg: rgb(189, 191, 216);
+  --text: rgb(23, 5, 104);
+  --higtling: rgb(22, 162, 255);
+  --touchs: rgb(22, 255, 34);
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: var(--bg);
+  color:var(--text);
+  font-size: xx-large;
+  font-weight: bolder;
+}
+h1{
+  font-size: 50px;
+  text-decoration: 2px underline var(--touchs);
+}
+h1:hover{
+  text-decoration: 5px underline var(--touchs);
+}
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin: 20px auto;
+  width: 320px;
+  background-color: var(--bg);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: var(--higtling);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#ganador {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: var(--text);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: scale(0.8);
+}
+#ganador.show{
+  opacity: 1;
+  transform: scale(1);
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: var(--text);
+  color: var(--higtling);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s linear;
+  transform: scale(1) ;
+}
+
+button:hover {
+  background-color: var(--touchs);
+  color: var(--text);
+  transform: scale(1.5);
+}
+
+.ganador {
+  background-color: var(--touchs);
+  animation: parpadeo 0.5s infinite alternate;
+}
+
+@keyframes parpadeo {
+  from {
+      background-color: var(--touchs);
+  }
+  to {
+      background-color: var(--higtling);
+  }
+}
